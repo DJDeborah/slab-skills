@@ -1,0 +1,565 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>13. SLAB Skills — Practical Setup and Sharing Guide</title><style>
+:root{--blue:#1762ff;--ink:#252a30;--muted:#626a74;--line:#e5e7eb}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}
+body{margin:0;background:white;color:var(--ink);font:16px/1.65 Arial,Helvetica,sans-serif}
+a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}a:hover{color:#083dac}
+aside{position:fixed;inset:0 auto 0 0;width:310px;padding:28px 24px;overflow:auto;border-right:1px solid var(--line);background:#fff}
+.brand{color:var(--muted);font-size:12px;letter-spacing:.12em;margin-bottom:22px}
+aside a{text-decoration:none;font-size:13px;line-height:1.6}aside ul{padding-left:16px;list-style:none}
+aside>.toc>ul{padding-left:0}aside li{margin:9px 0}aside>.toc>ul>li>a{font-weight:bold;font-size:14px}
+aside>.toc>ul>li>ul>li>ul{display:none}.toolbar{display:flex;gap:20px;font-size:13px;flex-wrap:wrap;margin-bottom:36px}
+main{max-width:880px;margin-left:max(345px,calc((100vw - 880px)/2 + 120px));margin-right:35px;padding:44px 18px 90px}
+h1{font-size:28px;line-height:1.3;letter-spacing:-.025em;margin:0 0 32px}h2{font-size:23px;line-height:1.4;letter-spacing:-.02em;margin:34px 0 15px}h3{font-size:18px;margin:23px 0 12px}
+.section-number{color:var(--blue);margin-right:5px}p{margin:12px 0}ul,ol{padding-left:26px}li{padding-left:3px;margin:11px 0}li::marker{color:var(--blue)}li>p{margin:8px 0}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+code{font:14px/1.6 Consolas,Menlo,monospace;background:#f5f6f7;border:1px solid #e7e9ec;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}
+pre{position:relative;background:#f7f8fa;border:1px solid var(--line);border-radius:6px;padding:38px 16px 16px;overflow-x:auto;line-height:1.55;margin:14px 0;white-space:pre}
+pre code{padding:0;background:none;border:0;overflow-wrap:normal;font-size:13px}.copy{position:absolute;right:9px;top:7px;border:1px solid #d8dde4;border-radius:4px;background:white;color:#4d5c70;padding:3px 8px;font:12px Arial;cursor:pointer}
+table{border-collapse:collapse;width:100%;margin:18px 0;font-size:14px}th,td{border:1px solid var(--line);text-align:left;padding:9px 12px;vertical-align:top}th{background:#f7f8fa}table code{font-size:12px}
+img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px;margin:8px 0}footer{color:var(--muted);font-size:12px;margin-top:38px;border-top:1px solid var(--line);padding-top:14px}
+@media(max-width:1000px){aside{width:250px;padding:24px 16px}main{margin-left:270px;margin-right:15px;padding-left:0;padding-right:0}}
+@media(max-width:720px){aside{position:static;width:auto;max-height:245px;border-right:0;border-bottom:1px solid var(--line)}main{margin:0;padding:30px 20px}h1{font-size:25px}h2{font-size:21px}pre{margin-left:-3px;margin-right:-3px}table{display:block;overflow:auto}}
+@media print{aside,.toolbar,.copy{display:none}main{margin:0;max-width:none;padding:0}pre{white-space:pre-wrap;break-inside:avoid}a{color:inherit}h2{break-after:avoid}img{max-height:620px;object-fit:contain}}
+</style></head><body><aside aria-label="Chapter contents"><div class="brand">SLAB / PRACTICAL HANDBOOK</div><div class="toc">
+<ul>
+<li><a href="#13-slab-skills-install-use-and-share-research-workflows">13. SLAB Skills: Install, Use, and Share Research Workflows</a><ul>
+<li><a href="#131-background">13.1 Background</a></li>
+<li><a href="#132-prepare-your-computer">13.2 Prepare Your Computer</a></li>
+<li><a href="#133-download-the-collection">13.3 Download the Collection</a><ul>
+<li><a href="#a-zip-download-no-git-required">A. ZIP Download — No Git Required</a></li>
+<li><a href="#b-git-clone-recommended-for-contributors">B. Git Clone — Recommended for Contributors</a></li>
+</ul>
+</li>
+<li><a href="#134-install-skills-in-codex">13.4 Install Skills in Codex</a><ul>
+<li><a href="#a-install-with-a-codex-prompt">A. Install with a Codex Prompt</a></li>
+<li><a href="#b-install-with-the-repository-script">B. Install with the Repository Script</a></li>
+</ul>
+</li>
+<li><a href="#135-verify-the-installation">13.5 Verify the Installation</a></li>
+<li><a href="#136-try-the-beam-parameter-interface">13.6 Try the Beam Parameter Interface</a></li>
+<li><a href="#137-run-an-abaqus-parameter-sweep">13.7 Run an Abaqus Parameter Sweep</a><ul>
+<li><a href="#a-prepare-two-cases">A. Prepare Two Cases</a></li>
+<li><a href="#b-execute-and-check-results">B. Execute and Check Results</a></li>
+<li><a href="#c-resume-or-retry">C. Resume or Retry</a></li>
+</ul>
+</li>
+<li><a href="#138-use-skills-for-research-significance-gaps-and-writing">13.8 Use Skills for Research Significance, Gaps, and Writing</a></li>
+<li><a href="#139-create-your-own-skill">13.9 Create Your Own Skill</a></li>
+<li><a href="#1310-upload-a-skill-to-github">13.10 Upload a Skill to GitHub</a><ul>
+<li><a href="#a-fork-and-pull-request-recommended">A. Fork and Pull Request — Recommended</a></li>
+<li><a href="#b-browser-upload-no-git-required">B. Browser Upload — No Git Required</a></li>
+</ul>
+</li>
+<li><a href="#1311-update-or-replace-an-installed-skill">13.11 Update or Replace an Installed Skill</a></li>
+<li><a href="#1312-command-cheat-sheet">13.12 Command Cheat Sheet</a></li>
+<li><a href="#1313-troubleshooting">13.13 Troubleshooting</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside><main><nav class="toolbar"><a href="../index.html">Skill directory</a><a href="https://github.com/DJDeborah/slab-skills">GitHub repository</a><a href="CHAPTER_13_SLAB_SKILLS.md" download>Download Markdown</a></nav><h1 id="13-slab-skills-install-use-and-share-research-workflows"><span class="section-number">13.</span> SLAB Skills: Install, Use, and Share Research Workflows</h1>
+<h2 id="131-background"><span class="section-number">13.1</span> Background</h2>
+<ul>
+<li><strong>What is a skill?</strong> A folder containing <code>SKILL.md</code> instructions and optional scripts, references, templates, or interfaces. Install the complete folder so that its resources remain available. See <a href="https://learn.chatgpt.com/docs/build-skills">OpenAI: Build skills</a>.</li>
+<li><strong>What is SLAB Skills?</strong> A public collection of 13 skills for research significance, research gaps, scientific writing, mechanics, FEM verification, and Abaqus automation.</li>
+<li><strong>Goal of this guide:</strong> install a skill, run a small example, check the result, and contribute your own workflow.</li>
+</ul>
+<p><strong>Start here:</strong> <a href="https://github.com/DJDeborah/slab-skills">GitHub repository</a> · <a href="https://djdeborah.github.io/slab-skills/">Skill directory</a> · <a href="https://github.com/DJDeborah/slab-skills/blob/main/docs/HELP.md">Help</a></p>
+<hr />
+<h2 id="132-prepare-your-computer"><span class="section-number">13.2</span> Prepare Your Computer</h2>
+<ol>
+<li>Open <strong>Codex</strong> and confirm that you can start a task in a local project folder.</li>
+<li>Open <strong>PowerShell</strong> on Windows, or a terminal on macOS/Linux.</li>
+<li>
+<p>Check Python:</p>
+<pre class="highlight"><code class="language-powershell">python --version</code></pre>
+<p><strong>Expected:</strong> Python <strong>3.10 or newer</strong>. If the command is unavailable, install Python from <a href="https://www.python.org/downloads/">python.org</a> and reopen the terminal.</p>
+</li>
+<li>
+<p>For the Git route, check Git:</p>
+<pre class="highlight"><code class="language-powershell">git --version</code></pre>
+<p>If unavailable, install it from <a href="https://git-scm.com/downloads">git-scm.com</a>. You can also use the ZIP route below without Git.</p>
+</li>
+<li>
+<p>For actual FEM execution, confirm that you have a working <strong>Abaqus installation and license</strong>. The beam interface, input preparation, and portable checks can run without Abaqus.</p>
+</li>
+</ol>
+<p><strong>Command convention:</strong> run the Python commands below from the downloaded <code>slab-skills</code> root folder. Enter <code>$skill-name</code> prompts in <strong>Codex</strong>, not in PowerShell.</p>
+<hr />
+<h2 id="133-download-the-collection"><span class="section-number">13.3</span> Download the Collection</h2>
+<h3 id="a-zip-download-no-git-required">A. ZIP Download — No Git Required</h3>
+<ol>
+<li>Open <a href="https://github.com/DJDeborah/slab-skills/releases">SLAB Skills Releases</a>.</li>
+<li>Select <strong>v0.1.0</strong> and download <strong>slab-skills-v0.1.0.zip</strong> under <strong>Assets</strong>.</li>
+<li>Extract the ZIP to a writable folder.</li>
+<li>Open the extracted <code>slab-skills</code> folder. Confirm that you see <code>skills</code>, <code>tools</code>, <code>docs</code>, and <code>README.md</code>.</li>
+<li>Open a terminal in that folder.</li>
+</ol>
+<h3 id="b-git-clone-recommended-for-contributors">B. Git Clone — Recommended for Contributors</h3>
+<ol>
+<li>Open a terminal in the folder where you want to keep the collection.</li>
+<li>
+<p>Run:</p>
+<pre class="highlight"><code class="language-powershell">git clone https://github.com/DJDeborah/slab-skills.git
+cd slab-skills</code></pre>
+</li>
+<li>
+<p>Confirm that <code>skills/beam-parameter-interface/SKILL.md</code> exists.</p>
+</li>
+<li>To reproduce a published version, use <code>git checkout v0.1.0</code>. For contributing new work, keep or return to <code>main</code>.</li>
+</ol>
+<hr />
+<h2 id="134-install-skills-in-codex"><span class="section-number">13.4</span> Install Skills in Codex</h2>
+<h3 id="a-install-with-a-codex-prompt">A. Install with a Codex Prompt</h3>
+<ol>
+<li>Start a Codex task with access to your local project.</li>
+<li>
+<p>Paste:</p>
+<pre class="highlight"><code class="language-text">Use $skill-installer to install these skills from
+https://github.com/DJDeborah/slab-skills:
+- skills/beam-parameter-interface
+- skills/abaqus-parametric-workflow
+Copy each complete skill directory, including all supporting resources.
+Report the actual installation paths.</code></pre>
+</li>
+<li>
+<p>Wait for the installer to finish.</p>
+</li>
+<li>Start a fresh task and invoke <code>$beam-parameter-interface</code>.</li>
+<li>If the skill is missing, restart Codex and check the reported installation path. See <a href="https://learn.chatgpt.com/docs/build-skills">OpenAI skill installation guidance</a>.</li>
+</ol>
+<h3 id="b-install-with-the-repository-script">B. Install with the Repository Script</h3>
+<ol>
+<li>
+<p>In the downloaded repository root, install two selected skills:</p>
+<pre class="highlight"><code class="language-powershell">python tools/install.py --user --skill beam-parameter-interface --skill abaqus-parametric-workflow</code></pre>
+</li>
+<li>
+<p>To install all 13 skills instead, run:</p>
+<pre class="highlight"><code class="language-powershell">python tools/install.py --user</code></pre>
+<p><strong>Choose either step 1 or step 2.</strong> The installer refuses to overwrite existing directories.</p>
+</li>
+<li>
+<p>To install only in one project, replace the example path and run:</p>
+<pre class="highlight"><code class="language-powershell">python tools/install.py --project "D:\my-research" --skill research-gap</code></pre>
+</li>
+<li>
+<p>Start a fresh Codex task in that project and invoke <code>$research-gap</code>.</p>
+</li>
+</ol>
+<p><strong>Expected:</strong> the script prints an <code>Installed ...</code> line for each selected skill. This script uses <code>~/.agents/skills</code> for user installation and <code>&lt;project&gt;/.agents/skills</code> for project installation. The bundled installer may use <code>$CODEX_HOME/skills</code>; use one installation route and avoid duplicate names. See <a href="INSTALL.md">installation details</a>.</p>
+<hr />
+<h2 id="135-verify-the-installation"><span class="section-number">13.5</span> Verify the Installation</h2>
+<ol>
+<li>
+<p>In Codex, paste:</p>
+<pre class="highlight"><code class="language-text">Use $beam-parameter-interface. Read its SKILL.md and tell me which
+interface asset it uses. Open the interface and report its initial
+length, thickness, and predicted tip reaction.</code></pre>
+</li>
+<li>
+<p>Confirm that Codex reads the intended skill directory and opens the beam interface.</p>
+</li>
+<li>
+<p>In the repository terminal, run the portable checks:</p>
+<pre class="highlight"><code class="language-powershell">python -m pip install -r requirements-dev.txt
+python tools/validate_catalog.py
+python -m unittest discover -s tests -v
+python tools/run_demo.py --out local-runs/chapter13-demo</code></pre>
+</li>
+<li>
+<p>Inspect <code>local-runs/chapter13-demo/demo-summary.json</code>.</p>
+</li>
+</ol>
+<p><strong>Expected for v0.1.0:</strong> catalog validation passes, <strong>53 tests</strong> pass, and the demo reports <code>"pass": true</code>. Use a fresh output folder when rerunning the demo. These checks verify structure and bounded examples; real research conclusions require additional evidence.</p>
+<hr />
+<h2 id="136-try-the-beam-parameter-interface"><span class="section-number">13.6</span> Try the Beam Parameter Interface</h2>
+<ol>
+<li>Open the <a href="https://djdeborah.github.io/slab-skills/skills/beam-parameter-interface/assets/index.html">online beam interface</a>. Alternatively, open <code>skills/beam-parameter-interface/assets/index.html</code> locally.</li>
+<li>Click <strong>Reset example parameters</strong> (<code>恢复示例参数</code>).</li>
+<li>
+<p>Confirm the defaults:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Length L</td>
+<td style="text-align: right;">100 mm</td>
+</tr>
+<tr>
+<td>Width b</td>
+<td style="text-align: right;">10 mm</td>
+</tr>
+<tr>
+<td>Thickness h</td>
+<td style="text-align: right;">1 mm</td>
+</tr>
+<tr>
+<td>Young's modulus E</td>
+<td style="text-align: right;">210,000 N/mm²</td>
+</tr>
+<tr>
+<td>Prescribed tip displacement</td>
+<td style="text-align: right;">−0.1 mm</td>
+</tr>
+<tr>
+<td>Predicted tip reaction</td>
+<td style="text-align: right;">−0.0525 N</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Change <strong>Thickness h</strong> (<code>弯曲方向厚度 h</code>) from <strong>1</strong> to <strong>2 mm</strong>.</p>
+</li>
+<li>Confirm that the predicted reaction becomes <strong>−0.42 N</strong>, eight times the original magnitude. The preview follows <code>I = b h³/12</code> and <code>F = 3EIδ/L³</code>.</li>
+<li>Set <strong>Length L</strong> to <strong>0</strong>. Confirm that the interface shows an invalid-parameter message.</li>
+<li>Click <strong>Reset example parameters</strong> again.</li>
+<li>Click <strong>Export beam JSON</strong> (<code>导出 beam JSON</code>) and save <code>beam-explicit.json</code> in the repository root.</li>
+<li>If download is blocked, click <strong>Copy beam JSON</strong> (<code>复制 beam JSON</code>), paste into a plain-text editor, and save the same filename as UTF-8. If copying is blocked, expand the JSON panel and copy its text manually.</li>
+<li>
+<p>Generate an Abaqus input file:</p>
+<pre class="highlight"><code class="language-powershell">python skills/abaqus-parametric-workflow/scripts/prepare_explicit.py beam-explicit.json --out local-runs/chapter13-beam</code></pre>
+</li>
+<li>
+<p>Open <code>local-runs/chapter13-beam/registration.json</code>. Check that <strong>ROOT</strong> and <strong>TIP</strong> each select one node, ROOT constrains DOFs <strong>1/2/6</strong>, and TIP controls DOF <strong>2</strong>.</p>
+</li>
+</ol>
+<p><strong>Expected:</strong> the output folder contains <code>beam_explicit.inp</code> and <code>registration.json</code>. The interface shows an analytical preview; generating an INP has not yet run FEM.</p>
+<p><img alt="Figure 13-1. Actual beam parameter interface with default inputs." src="assets/beam-studio-default.jpg" /></p>
+<p><img alt="Figure 13-2. Beam endpoints and registered boundary conditions." src="assets/beam-boundaries.png" /></p>
+<hr />
+<h2 id="137-run-an-abaqus-parameter-sweep"><span class="section-number">13.7</span> Run an Abaqus Parameter Sweep</h2>
+<h3 id="a-prepare-two-cases">A. Prepare Two Cases</h3>
+<ol>
+<li>
+<p>Use the bundled sweep, which varies beam width between <strong>8 and 10 mm</strong>:</p>
+<pre class="highlight"><code class="language-powershell">python skills/abaqus-parametric-workflow/scripts/prepare_sweep.py skills/abaqus-parametric-workflow/assets/sweep.json --out local-runs/chapter13-sweep --max-cases 2</code></pre>
+</li>
+<li>
+<p>Open <code>local-runs/chapter13-sweep/manifest.json</code> and check the two case entries.</p>
+</li>
+<li>Inspect each case's <code>config.json</code>, INP, and <code>registration.json</code>.</li>
+<li>
+<p>Preview the execution plan:</p>
+<pre class="highlight"><code class="language-powershell">python skills/abaqus-parametric-workflow/scripts/run_sweep.py local-runs/chapter13-sweep/manifest.json</code></pre>
+</li>
+</ol>
+<p><strong>Expected:</strong> two planned cases and <code>"solver_launched": false</code>. The output directory must be new; do not edit a frozen case to change its parameters.</p>
+<h3 id="b-execute-and-check-results">B. Execute and Check Results</h3>
+<ol>
+<li>Confirm that <code>abaqus</code> works in your terminal. If it is not on PATH, find your actual <code>abaqus.bat</code> launcher.</li>
+<li>
+<p>Run the two cases:</p>
+<pre class="highlight"><code class="language-powershell">python skills/abaqus-parametric-workflow/scripts/run_sweep.py local-runs/chapter13-sweep/manifest.json --execute --abaqus abaqus --max-jobs 2</code></pre>
+<p>On Windows, replace <code>--abaqus abaqus</code> with <code>--abaqus "C:\YOUR_SIMULIA\Commands\abaqus.bat"</code> when necessary.</p>
+</li>
+<li>
+<p>Wait for both cases to finish. The runner submits them serially.</p>
+</li>
+<li>Open <code>local-runs/chapter13-sweep/summary.csv</code>.</li>
+<li>Confirm <code>state=completed</code> and <code>quality_pass=True</code> for both cases.</li>
+<li>Inspect each case's <code>attempts/001/quality.json</code>. Check reaction error, kinetic/internal energy ratio, and artificial/internal energy ratio.</li>
+</ol>
+<p><strong>Reference values measured with the published example:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Width</th>
+<th style="text-align: right;">Final RF2</th>
+<th style="text-align: right;">Analytical RF2</th>
+<th style="text-align: right;">Reaction error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8 mm</td>
+<td style="text-align: right;">−0.04202165 N</td>
+<td style="text-align: right;">−0.042 N</td>
+<td style="text-align: right;">0.05156%</td>
+</tr>
+<tr>
+<td>10 mm</td>
+<td style="text-align: right;">−0.05252707 N</td>
+<td style="text-align: right;">−0.0525 N</td>
+<td style="text-align: right;">0.05156%</td>
+</tr>
+</tbody>
+</table>
+<p>These are elastic B21 cantilever checks. For a new geometry, material, contact model, or buckling problem, implement and verify the corresponding adapter before extending the sweep. See <a href="VALIDATION.md">measured validation</a>.</p>
+<h3 id="c-resume-or-retry">C. Resume or Retry</h3>
+<ol>
+<li>
+<p>Run the same plan with <code>--resume</code>:</p>
+<pre class="highlight"><code class="language-powershell">python skills/abaqus-parametric-workflow/scripts/run_sweep.py local-runs/chapter13-sweep/manifest.json --execute --abaqus abaqus --max-jobs 2 --resume</code></pre>
+</li>
+<li>
+<p>Confirm <code>launched=0</code> and <code>skipped_completed=2</code> after two successful runs. Keep the same launcher option used above.</p>
+</li>
+<li>If a case failed, fix the environment and add <code>--retry-failed</code> to the resume command. The runner preserves previous attempts.</li>
+<li>To change parameters, edit a copy of the sweep JSON and prepare a <strong>new output directory</strong>.</li>
+</ol>
+<p><img alt="Figure 13-3. Parameter sweep preparation, execution, audit, and recovery." src="assets/parametric-workflow.png" /></p>
+<hr />
+<h2 id="138-use-skills-for-research-significance-gaps-and-writing"><span class="section-number">13.8</span> Use Skills for Research Significance, Gaps, and Writing</h2>
+<ol>
+<li>
+<p>Install the three research skills if they are not already installed:</p>
+<pre class="highlight"><code class="language-powershell">python tools/install.py --user --skill research-significance --skill research-gap --skill research-writing</code></pre>
+</li>
+<li>
+<p>Open a Codex task in your research project. Provide your question, available evidence, and relevant papers.</p>
+</li>
+<li>
+<p>Start with significance:</p>
+<pre class="highlight"><code class="language-text">Use $research-significance for this research question: [insert question].
+Give three candidate contributions. For each, state the scientific or
+design decision it changes, supporting evidence, a rival explanation,
+and the cheapest discriminating test. Mark unsupported points explicitly.</code></pre>
+</li>
+<li>
+<p>Test the gap:</p>
+<pre class="highlight"><code class="language-text">Use $research-gap to test this candidate gap: [insert bounded claim].
+Keep a search ledger with queries, dates, and primary sources.
+Build a paper-capability matrix and search for counterexamples.
+Distinguish not searched, not reported, and explicitly ruled out.
+Save the ledger and a bounded, falsifiable gap statement.</code></pre>
+</li>
+<li>
+<p>Draft from evidence:</p>
+<pre class="highlight"><code class="language-text">Use $research-writing to revise my introduction and results section.
+Preserve physical definitions and essential Main/SI evidence.
+Produce a claim-to-evidence map. Do not add experiments or conclusions
+that the supplied material does not support.</code></pre>
+</li>
+<li>
+<p>Open the cited primary papers and check the passages supporting each claim.</p>
+</li>
+<li>Keep the search ledger, evidence map, revised draft, and unresolved questions in your project folder.</li>
+</ol>
+<p><strong>Expected:</strong> inspectable artifacts and bounded claims. A fluent paragraph alone does not establish a research gap or a physical mechanism.</p>
+<hr />
+<h2 id="139-create-your-own-skill"><span class="section-number">13.9</span> Create Your Own Skill</h2>
+<ol>
+<li>Choose one repeatable task, such as <strong>register shell boundary regions</strong> or <strong>export force–displacement histories</strong>.</li>
+<li>Return to the <code>slab-skills</code> root folder.</li>
+<li>
+<p>Copy the template on Windows:</p>
+<pre class="highlight"><code class="language-powershell">Copy-Item -LiteralPath "templates/skill-template" -Destination "skills/my-skill-name" -Recurse</code></pre>
+<p>On macOS/Linux: <code>cp -R templates/skill-template skills/my-skill-name</code>.</p>
+</li>
+<li>
+<p>Edit <code>skills/my-skill-name/SKILL.md</code>:</p>
+<pre class="highlight"><code class="language-yaml">---
+name: my-skill-name
+description: Register named boundary regions and verify selected entities before FEM execution.
+---</code></pre>
+</li>
+<li>
+<p>Replace the template body with <strong>required inputs → actions → outputs → acceptance criteria → failure handling</strong>.</p>
+</li>
+<li>Edit <code>agents/openai.yaml</code>. Include <code>$my-skill-name</code> in <code>default_prompt</code>.</li>
+<li>Add scripts only where useful. Put a small anonymous example in <code>assets/</code> and method notes in <code>references/</code>.</li>
+<li>
+<p>Add an entry to the <code>skills</code> array in <code>catalog.json</code>:</p>
+<pre class="highlight"><code class="language-json">{
+ "name": "my-skill-name",
+ "category": "simulation",
+ "summary_zh": "命名边界注册与实体选择检查",
+ "license": "MIT",
+ "runtime": "Python 3.10+; solver-specific adapter",
+ "verification": "State the checks actually completed and remaining limits.",
+ "source": "Your name and any upstream source/license"
+}</code></pre>
+<p>The directory's current <code>summary_zh</code> field is Chinese; the rest of your skill can be English. Use MIT only when you own the contribution or have compatible sharing rights.</p>
+</li>
+<li>
+<p>Validate and install into a fresh test destination:</p>
+<pre class="highlight"><code class="language-powershell">python tools/validate_catalog.py
+python tools/install.py --dest ../slab-skill-test --skill my-skill-name</code></pre>
+</li>
+<li>
+<p>Run one representative task in Codex. Record its inputs, outputs, acceptance result, and limitations. A boundary adapter should check expected node/face counts before solving.</p>
+</li>
+</ol>
+<hr />
+<h2 id="1310-upload-a-skill-to-github"><span class="section-number">13.10</span> Upload a Skill to GitHub</h2>
+<h3 id="a-fork-and-pull-request-recommended">A. Fork and Pull Request — Recommended</h3>
+<ol>
+<li>Sign in to GitHub and open <a href="https://github.com/DJDeborah/slab-skills">DJDeborah/slab-skills</a>.</li>
+<li>Click <strong>Fork → Create fork</strong>.</li>
+<li>
+<p>Clone your fork; replace <code>YOUR_NAME</code> with your GitHub username:</p>
+<pre class="highlight"><code class="language-powershell">git clone https://github.com/YOUR_NAME/slab-skills.git slab-skills-contribution
+cd slab-skills-contribution
+git switch -c add/my-skill-name</code></pre>
+</li>
+<li>
+<p>Copy your complete skill directory into <code>skills/</code> and update <code>catalog.json</code> in this fork.</p>
+</li>
+<li>
+<p>Run:</p>
+<pre class="highlight"><code class="language-powershell">python -m pip install -r requirements-dev.txt
+python tools/validate_catalog.py
+python -m unittest discover -s tests -v</code></pre>
+</li>
+<li>
+<p>Commit the contribution:</p>
+<pre class="highlight"><code class="language-powershell">git add skills/my-skill-name catalog.json
+git commit -m "Add my-skill-name with example and verification"
+git push -u origin add/my-skill-name</code></pre>
+</li>
+<li>
+<p>Open your fork on GitHub and click <strong>Compare &amp; pull request</strong>.</p>
+</li>
+<li>Set <strong>base</strong> to <code>DJDeborah/slab-skills:main</code> and <strong>compare</strong> to your fork's <code>add/my-skill-name</code> branch.</li>
+<li>Describe the task, dependencies, source/license, example, completed checks, and limits. Click <strong>Create pull request</strong>.</li>
+<li>Respond to review comments with commits on the same branch. The PR updates automatically.</li>
+</ol>
+<h3 id="b-browser-upload-no-git-required">B. Browser Upload — No Git Required</h3>
+<ol>
+<li>Fork the repository and create a branch in your fork.</li>
+<li>Open <code>skills</code> and select <strong>Add file → Upload files</strong>.</li>
+<li>Upload the complete skill folder. Check that its directory structure is preserved.</li>
+<li>Update <code>catalog.json</code>, commit, and open a PR to the original repository.</li>
+<li>If folder paths are not preserved, use the Git route above.</li>
+</ol>
+<p><strong>Expected:</strong> your PR appears in the original repository and runs its automatic checks. A public repository accepts Fork/PR contributions; direct edits to the original require collaborator access. See the <a href="../CONTRIBUTING.md">contribution tutorial</a>.</p>
+<hr />
+<h2 id="1311-update-or-replace-an-installed-skill"><span class="section-number">13.11</span> Update or Replace an Installed Skill</h2>
+<ol>
+<li>
+<p>In your downloaded repository, check for local changes:</p>
+<pre class="highlight"><code class="language-powershell">git status</code></pre>
+</li>
+<li>
+<p>Save or commit your changes before updating. On <code>main</code>, run:</p>
+<pre class="highlight"><code class="language-powershell">git pull --ff-only</code></pre>
+</li>
+<li>
+<p>Install the new version into a <strong>fresh test directory</strong> first:</p>
+<pre class="highlight"><code class="language-powershell">python tools/install.py --dest ../slab-update-check --skill beam-parameter-interface</code></pre>
+</li>
+<li>
+<p>Check the new version using a small example.</p>
+</li>
+<li>Move the old installed skill directory to a backup location <strong>outside all skill search paths</strong>.</li>
+<li>Install the replacement with your original installation route.</li>
+<li>Start a fresh Codex task and check the actual loaded path.</li>
+</ol>
+<p><strong>Expected:</strong> the replacement installs without <code>Refusing to overwrite</code>. For reproducible research, record the release tag or commit used for each run.</p>
+<hr />
+<h2 id="1312-command-cheat-sheet"><span class="section-number">13.12</span> Command Cheat Sheet</h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command or action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download source</td>
+<td><code>git clone https://github.com/DJDeborah/slab-skills.git</code></td>
+</tr>
+<tr>
+<td>Install all skills</td>
+<td><code>python tools/install.py --user</code></td>
+</tr>
+<tr>
+<td>Install one skill</td>
+<td><code>python tools/install.py --user --skill research-gap</code></td>
+</tr>
+<tr>
+<td>Validate directories and catalog</td>
+<td><code>python tools/validate_catalog.py</code></td>
+</tr>
+<tr>
+<td>Run portable tests</td>
+<td><code>python -m unittest discover -s tests -v</code></td>
+</tr>
+<tr>
+<td>Run research demo</td>
+<td><code>python tools/run_demo.py --out local-runs/new-demo</code></td>
+</tr>
+<tr>
+<td>Open beam interface</td>
+<td><a href="https://djdeborah.github.io/slab-skills/skills/beam-parameter-interface/assets/index.html">Beam Parameter Studio</a></td>
+</tr>
+<tr>
+<td>Invoke a skill</td>
+<td>Enter <code>$skill-name</code> in Codex</td>
+</tr>
+<tr>
+<td>Start a contribution</td>
+<td>Fork → new branch → edit → PR</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1313-troubleshooting"><span class="section-number">13.13</span> Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Steps to try</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Codex cannot find the skill</td>
+<td>Check the printed installation path and <code>SKILL.md</code>; remove duplicate installations; restart Codex.</td>
+</tr>
+<tr>
+<td><code>Refusing to overwrite</code></td>
+<td>Test the new version separately; back up the old skill outside search paths; install again.</td>
+</tr>
+<tr>
+<td><code>No module named yaml</code></td>
+<td>Run <code>python -m pip install -r requirements-dev.txt</code> with the same Python used for validation.</td>
+</tr>
+<tr>
+<td>JSON download or copy fails</td>
+<td>Expand the configuration panel, copy the visible JSON, and save it as UTF-8 plain text.</td>
+</tr>
+<tr>
+<td>The sweep does not run Abaqus</td>
+<td>The default is preview only. Add <code>--execute</code>, check the launcher, and confirm your license works.</td>
+</tr>
+<tr>
+<td><code>Frozen hash changed</code></td>
+<td>Preserve the old run; prepare the updated configuration in a new output directory.</td>
+</tr>
+<tr>
+<td>A failed case is not retried</td>
+<td>Fix the environment, then use both <code>--resume</code> and <code>--retry-failed</code>.</td>
+</tr>
+<tr>
+<td>A command fails on a path with spaces</td>
+<td>Quote the path and run commands from the repository root.</td>
+</tr>
+<tr>
+<td>FEM differs from the reference</td>
+<td>Check units, registration, output definitions, time/mesh sensitivity, and energy history before changing tolerances.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Validation note:</strong> v0.1.0 includes 53 passing portable tests, four passing Windows/Linux CI jobs, and two completed licensed Explicit beam cases. UI parameter changes, JSON copying, and input preparation were checked; automated download-file capture and browser file import were not verified. See the <a href="VALIDATION.md">validation report</a>.</p>
+<hr />
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://github.com/DJDeborah/slab-skills">SLAB Skills repository</a>.</li>
+<li><a href="INSTALL.md">SLAB Skills installation guide</a>.</li>
+<li><a href="../CONTRIBUTING.md">SLAB Skills contribution guide</a>.</li>
+<li><a href="VALIDATION.md">SLAB Skills measured validation report</a>.</li>
+<li><a href="https://learn.chatgpt.com/docs/build-skills">OpenAI: Build skills</a>.</li>
+<li><a href="https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project">GitHub: Contributing to a project</a>.</li>
+</ol><footer>Chapter 13 · English practical guide · Documentation added 2026-10-02. Version-specific measurements refer to v0.1.0.</footer></main><script>
+for(const pre of document.querySelectorAll('pre')){const button=document.createElement('button');button.className='copy';button.textContent='Copy';button.type='button';button.setAttribute('aria-label','Copy code block');button.addEventListener('click',async()=>{const code=pre.querySelector('code');try{await navigator.clipboard.writeText(code.textContent);button.textContent='Copied'}catch(error){const range=document.createRange();range.selectNodeContents(code);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);button.textContent='Press Ctrl+C'}});pre.append(button)}
+</script></body></html>

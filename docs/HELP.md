@@ -1,5 +1,7 @@
 # 帮助与常见问题
 
+[English step-by-step guide — Chapter 13](chapter13.html) · [可复制 Markdown](CHAPTER_13_SLAB_SKILLS.md)
+
 | 我想做什么 | 去哪里 |
 |---|---|
 | 下载、安装、升级或回退 | [INSTALL](INSTALL.md) |

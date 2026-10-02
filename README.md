@@ -69,6 +69,7 @@ python tools/install.py --user --skill beam-parameter-interface --skill abaqus-p
 
 ## 文档
 
+- [English practical guide — Chapter 13](https://djdeborah.github.io/slab-skills/docs/chapter13.html) · [Markdown source](docs/CHAPTER_13_SLAB_SKILLS.md)
 - [下载、安装、更新](docs/INSTALL.md)
 - [上传、Fork、PR 与审核](CONTRIBUTING.md)
 - [Skill 格式和创建模板](docs/FORMAT.md)
