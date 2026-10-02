@@ -1,0 +1,22 @@
+{
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The explicit beam passes a numerical small-deformation smoke benchmark.",
+      "status": "untested",
+      "evidence_ids": []
+    }
+  ],
+  "evidence": [],
+  "figures": [
+    {
+      "id": "F1",
+      "caption": "Compare registered reaction with the small-deformation beam reference.",
+      "evidence_ids": []
+    }
+  ],
+  "required_assets": [
+    "C1",
+    "F1"
+  ]
+}

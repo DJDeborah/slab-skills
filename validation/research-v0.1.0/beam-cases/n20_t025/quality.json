@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "errors": [],
+  "window_fraction": [
+    0.5,
+    1.0
+  ],
+  "window_samples": 251,
+  "meaningful_samples": 251,
+  "masked_samples": 0,
+  "max_ke_ie": 0.0007952793107002372,
+  "max_ae_ie": 0.0,
+  "full_history_max_ke_ie": 0.005985599901378877,
+  "tip_reaction_N": -0.052503861486911774,
+  "expected_tip_reaction_N": -0.0525,
+  "reaction_relative_error": 7.355213165286904e-05,
+  "scope": "Elastic numerical smoke only; event, mesh/rate convergence and FE bifurcation unverified."
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Beam Parameter Interface"
+  short_description: "Preview beam sensitivity and export registered configurations"
+  default_prompt: "Use $beam-parameter-interface to prepare and verify the supplied mechanics workflow."

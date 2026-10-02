@@ -1,0 +1,50 @@
+{
+  "case_id": "SYNTHETIC-PINNED-BEAM",
+  "units": {
+    "length": "mm",
+    "force": "N"
+  },
+  "reference_ports": {
+    "left": [
+      0,
+      0,
+      0
+    ],
+    "right": [
+      100,
+      0,
+      0
+    ]
+  },
+  "material": {
+    "law": "linear_elastic",
+    "E": 210000,
+    "nu": 0.3
+  },
+  "cross_section": {
+    "type": "rectangle",
+    "width": 10,
+    "height": 1
+  },
+  "constraints": {
+    "left": [
+      "ux",
+      "uy"
+    ],
+    "right": [
+      "uy"
+    ]
+  },
+  "loading": {
+    "control": "force",
+    "port": "right",
+    "dof": "ux",
+    "amplitude": -1
+  },
+  "observable_definition": {
+    "lateral": "global-y",
+    "rotation": "radians-ccw",
+    "reference": "undeformed"
+  },
+  "dataset_role": "verification"
+}

@@ -1,0 +1,33 @@
+{
+  "state": "completed",
+  "attempt": 1,
+  "started_utc": "2026-10-02T06:33:42.625228+00:00",
+  "evidence_folder": "attempts\\001",
+  "quality": {
+    "pass": true,
+    "errors": [],
+    "window_fraction": [
+      0.5,
+      1.0
+    ],
+    "window_samples": 251,
+    "meaningful_samples": 251,
+    "masked_samples": 0,
+    "max_ke_ie": 0.0008011447950733976,
+    "max_ae_ie": 0.0,
+    "full_history_max_ke_ie": 0.0060297880174635735,
+    "tip_reaction_N": -0.042021654546260834,
+    "expected_tip_reaction_N": -0.042,
+    "reaction_relative_error": 0.0005155844347816935,
+    "scope": "Elastic numerical smoke only; event, mesh/rate convergence and FE bifurcation unverified."
+  },
+  "final_U2": -0.10000000149011612,
+  "completion_evidence": "STA success and readable expected ODB step",
+  "evidence_hashes": {
+    "attempts\\001\\history.json": "76f046bd1ae0f56e8169d69610e708911d9463b29de3271dbde536f91bae6f0f",
+    "attempts\\001\\quality.json": "40780b93fcd77ee92a1c88af6bea54f4ba5ed0baa0af7495524dbcb02a605dc7",
+    "attempts\\001\\beam_43399ae0b302.sta": "b7e09a61dcfce4b4a0b1555588c9c16bcab49ca083531aee62b329a892ac7273",
+    "attempts\\001\\beam_43399ae0b302.odb": "9f8774405ffa1151187a09c615e949d5ce9e7615fb76f61404a153e39664664e"
+  },
+  "ended_utc": "2026-10-02T06:34:00.856968+00:00"
+}

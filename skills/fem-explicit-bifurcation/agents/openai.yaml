@@ -1,0 +1,4 @@
+interface:
+  display_name: "FEM Explicit and Bifurcation"
+  short_description: "Register boundaries and separate dynamics from stability"
+  default_prompt: "Use $fem-explicit-bifurcation to work on the supplied research materials and produce an evidence-linked result."

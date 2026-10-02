@@ -1,0 +1,3 @@
+case_id,state,parameters,attempt,final_U2,final_RF2,max_ke_ie,quality_pass,evidence_folder
+beam_43399ae0b302,completed,"{""geometry.width"": 8.0}",1,-0.10000000149011612,-0.042021654546260834,0.0008011447950733976,True,attempts\001
+beam_d0c1d97312e1,completed,"{""geometry.width"": 10.0}",1,-0.10000000149011612,-0.05252707004547119,0.0008011447812059694,True,attempts\001

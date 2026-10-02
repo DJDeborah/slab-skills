@@ -1,0 +1,67 @@
+{
+  "adapter": "abaqus-b21-cantilever",
+  "units": "N-mm-tonne-s",
+  "job": "beam_explicit",
+  "geometry": {
+    "length": 100.0,
+    "width": 10.0,
+    "thickness": 1.0,
+    "elements": 20
+  },
+  "material": {
+    "E": 210000.0,
+    "nu": 0.3,
+    "density": 7.85e-09
+  },
+  "regions": {
+    "ROOT": {
+      "bbox": [
+        -0.0001,
+        0.0001,
+        -0.0001,
+        0.0001
+      ],
+      "expected_count": 1
+    },
+    "TIP": {
+      "bbox": [
+        99.9999,
+        100.0001,
+        -0.0001,
+        0.0001
+      ],
+      "expected_count": 1
+    }
+  },
+  "constraints": [
+    {
+      "region": "ROOT",
+      "dofs": [
+        1,
+        2,
+        6
+      ],
+      "value": 0.0
+    },
+    {
+      "region": "TIP",
+      "dofs": [
+        2
+      ],
+      "value": -0.1,
+      "amplitude": "RAMP"
+    }
+  ],
+  "duration": 0.25,
+  "outputs": 500,
+  "quality": {
+    "window_fraction": [
+      0.5,
+      1.0
+    ],
+    "internal_energy_floor_fraction": 0.01,
+    "max_ke_ie": 0.05,
+    "max_ae_ie": 0.05,
+    "reaction_relative_tolerance": 0.03
+  }
+}

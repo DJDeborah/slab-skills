@@ -1,0 +1,43 @@
+{
+  "adapter": "abaqus-b21-cantilever",
+  "units": "N-mm-tonne-s",
+  "node_count": 21,
+  "element_count": 20,
+  "regions": {
+    "ROOT": [
+      1
+    ],
+    "TIP": [
+      21
+    ]
+  },
+  "constraints": [
+    {
+      "region": "ROOT",
+      "dofs": [
+        1,
+        2,
+        6
+      ],
+      "value": 0.0
+    },
+    {
+      "region": "TIP",
+      "dofs": [
+        2
+      ],
+      "value": -0.1,
+      "amplitude": "RAMP"
+    }
+  ],
+  "section_director": [
+    0,
+    0,
+    -1
+  ],
+  "density": 7.85e-09,
+  "mass_scaling": false,
+  "expected_small_deflection_tip_reaction_N": -0.0525,
+  "scope": "Elastic straight beam only; no contact or buckling verification.",
+  "input_sha256": "890eee9aacedd47b7f78dce8ac406cf4983b2ba3d53b9490f561c606f7bf8345"
+}

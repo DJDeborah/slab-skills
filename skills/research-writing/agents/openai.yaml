@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Writing"
+  short_description: "Preserve evidence while writing clear physical arguments"
+  default_prompt: "Use $research-writing to work on the supplied research materials and produce an evidence-linked result."

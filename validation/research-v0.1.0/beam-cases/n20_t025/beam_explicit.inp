@@ -1,0 +1,77 @@
+*Heading
+Generated small-deformation cantilever smoke benchmark
+*Node
+1, 0, 0
+2, 5, 0
+3, 10, 0
+4, 15, 0
+5, 20, 0
+6, 25, 0
+7, 30, 0
+8, 35, 0
+9, 40, 0
+10, 45, 0
+11, 50, 0
+12, 55, 0
+13, 60, 0
+14, 65, 0
+15, 70, 0
+16, 75, 0
+17, 80, 0
+18, 85, 0
+19, 90, 0
+20, 95, 0
+21, 100, 0
+*Element, type=B21, elset=BEAM
+1, 1, 2
+2, 2, 3
+3, 3, 4
+4, 4, 5
+5, 5, 6
+6, 6, 7
+7, 7, 8
+8, 8, 9
+9, 9, 10
+10, 10, 11
+11, 11, 12
+12, 12, 13
+13, 13, 14
+14, 14, 15
+15, 15, 16
+16, 16, 17
+17, 17, 18
+18, 18, 19
+19, 19, 20
+20, 20, 21
+*Nset, nset=ROOT
+1
+*Nset, nset=TIP
+21
+*Material, name=ELASTIC
+*Elastic
+210000, 0.3
+*Density
+7.85e-09
+*Beam Section, elset=BEAM, material=ELASTIC, section=RECT
+10, 1
+0., 0., -1.
+*Boundary
+ROOT, 1, 1, 0
+ROOT, 2, 2, 0
+ROOT, 6, 6, 0
+*Amplitude, name=RAMP, definition=SMOOTH STEP
+0., 0., 0.25, 1.
+*Step, name=LOAD, nlgeom=YES
+*Dynamic, Explicit
+, 0.25
+*Boundary, amplitude=RAMP
+TIP, 2, 2, -0.1
+*Output, field, number interval=20
+*Node Output
+U, RF
+*Output, history, time interval=0.0005
+*Energy Output
+ALLIE, ALLKE, ALLAE, ALLVD, ALLWK, ETOTAL
+*Node Output, nset=TIP
+U2, RF2
+*End Step

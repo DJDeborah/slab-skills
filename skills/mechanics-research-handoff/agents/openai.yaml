@@ -1,0 +1,4 @@
+interface:
+  display_name: "mechanics-research-handoff"
+  short_description: "Reproducible mechanics modeling and evidence workflow"
+  default_prompt: "Use $mechanics-research-handoff to complete the mechanics task with explicit inputs and verification evidence."

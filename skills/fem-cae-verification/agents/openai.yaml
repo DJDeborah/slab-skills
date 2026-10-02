@@ -1,0 +1,4 @@
+interface:
+  display_name: "fem-cae-verification"
+  short_description: "Reproducible mechanics modeling and evidence workflow"
+  default_prompt: "Use $fem-cae-verification to complete the mechanics task with explicit inputs and verification evidence."

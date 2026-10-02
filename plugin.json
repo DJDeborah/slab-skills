@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "slab-skills",
+  "version": "0.1.0",
+  "description": "SLab open skill library for reproducible research and mechanics automation.",
+  "author": {
+    "name": "DJDeborah",
+    "url": "https://github.com/DJDeborah"
+  },
+  "repository": "https://github.com/DJDeborah/slab-skills",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "research",
+    "mechanics",
+    "abaqus",
+    "skills"
+  ]
+}

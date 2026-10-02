@@ -1,0 +1,4 @@
+interface:
+  display_name: "helix-rod-design"
+  short_description: "Reproducible mechanics modeling and evidence workflow"
+  default_prompt: "Use $helix-rod-design to complete the mechanics task with explicit inputs and verification evidence."

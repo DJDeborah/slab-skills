@@ -1,0 +1,16 @@
+{
+  "name": "slab-local",
+  "plugins": [
+    {
+      "name": "slab-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/slab-skills"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    }
+  ]
+}

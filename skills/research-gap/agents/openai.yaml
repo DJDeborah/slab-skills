@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Gap"
+  short_description: "Audit literature coverage and challenge novelty claims"
+  default_prompt: "Use $research-gap to work on the supplied research materials and produce an evidence-linked result."

@@ -1,0 +1,20 @@
+{
+  "pass": false,
+  "errors": [
+    "prescribed tip displacement mismatch"
+  ],
+  "window_fraction": [
+    0.5,
+    1.0
+  ],
+  "window_samples": 251,
+  "meaningful_samples": 251,
+  "masked_samples": 0,
+  "max_ke_ie": 0.0007956164856787674,
+  "max_ae_ie": 0.0,
+  "full_history_max_ke_ie": 0.005988041046125226,
+  "tip_reaction_N": -0.052712928503751755,
+  "expected_tip_reaction_N": -0.0525,
+  "reaction_relative_error": 0.004055781023842985,
+  "scope": "Elastic numerical smoke only; event, mesh/rate convergence and FE bifurcation unverified."
+}

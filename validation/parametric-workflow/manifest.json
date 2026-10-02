@@ -1,0 +1,35 @@
+{
+  "schema": "slab-sweep/1",
+  "created_utc": "2026-10-02T06:33:42.445985+00:00",
+  "study_sha256": "72fdc609b02ec500871a51d32c88494eb9028bab6de0fb4e6f290106848d5613",
+  "helper_hashes": {
+    "prepare_explicit.py": "24969d7e54040e684e108188b41596a52fd7df29103e4b75699394116c6052f4",
+    "extract_odb.py": "ccda7ae042cc23176d6146e894208fe310aa139c6b63ead36a45a2c5fa9762b7",
+    "audit_history.py": "f4d5d846f6bbbd00d0e95818565a5e3e71874cd683dec8882a5ebe5305a97c9d",
+    "prepare_sweep.py": "0305b331acc438385b5c122fa4581d298dddbddfc3e69204742df9ea595360a8",
+    "run_sweep.py": "bc2dea2771767828049f0d293bdf75be9eea186a71ee47ed650de4174525d749"
+  },
+  "cases": [
+    {
+      "case_id": "beam_43399ae0b302",
+      "parameters": {
+        "geometry.width": 8.0
+      },
+      "folder": "beam_43399ae0b302",
+      "config_sha256": "f866217dbb89047ae2ef6484b5ff2c9fcf5c3abf1832ba84429b3375e5cdfd70",
+      "input_sha256": "523487bd898d802c5bb13c998ec7d58f992015ac5a9febc2f27f5214376b3c8a",
+      "registration_sha256": "3c8ad392e06baeee86f9c3e806d08c75c700fdcc16779cf50677cc27d140f813"
+    },
+    {
+      "case_id": "beam_d0c1d97312e1",
+      "parameters": {
+        "geometry.width": 10.0
+      },
+      "folder": "beam_d0c1d97312e1",
+      "config_sha256": "b43b5b56f6ffe66b2eb290b0d88fc14e7622ff466598eb7a543d27c2cf7fae84",
+      "input_sha256": "5830252df7f3719c8a7450e250ee40c8e5d99de8d7915b20d39211770086a118",
+      "registration_sha256": "cf077ef773190a9c2c3cc28566f14b2a4aed23c0e3e3856164a647a45ffb8ab9"
+    }
+  ],
+  "scope": "Elastic B21 cantilever teaching sweep only."
+}

@@ -1,0 +1,19 @@
+{
+  "domain": "Synthetic teaching example",
+  "gap_statement": "The fixture does not resolve contact-feasible branch selection across a boundary family.",
+  "search_scope": "DEMO only; no real literature search is represented.",
+  "cutoff_date": "2026-10-02",
+  "claim_type": "bounded",
+  "counterexample_queries": [
+    "synthetic adversarial query"
+  ],
+  "nearest_studies": [
+    {
+      "study_id": "DEMO1",
+      "capability": "Static path under one boundary constraint",
+      "unresolved": "Transfer across boundary constraints",
+      "assessment": "partial"
+    }
+  ],
+  "decisive_test": "Freeze parameters; predict a registered unseen boundary case before simulation."
+}

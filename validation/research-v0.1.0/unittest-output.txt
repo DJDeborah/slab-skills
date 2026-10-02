@@ -1,0 +1,43 @@
+test_bc_registration (test_skills.FEMTests.test_bc_registration) ... ok
+test_duplicate_bc (test_skills.FEMTests.test_duplicate_bc) ... ok
+test_empty_selection (test_skills.FEMTests.test_empty_selection) ... ok
+test_energy_positive_control (test_skills.FEMTests.test_energy_positive_control) ... ok
+test_exact_branch_oracle (test_skills.FEMTests.test_exact_branch_oracle) ... ok
+test_force_event_not_bifurcation (test_skills.FEMTests.test_force_event_not_bifurcation) ... ok
+test_inertia_failure (test_skills.FEMTests.test_inertia_failure) ... ok
+test_no_drop_control (test_skills.FEMTests.test_no_drop_control) ... ok
+test_noncompleted_job (test_skills.FEMTests.test_noncompleted_job) ... ok
+test_nonfinite_history (test_skills.FEMTests.test_nonfinite_history) ... ok
+test_opening_persistence (test_skills.FEMTests.test_opening_persistence) ... ok
+test_unphysical_density (test_skills.FEMTests.test_unphysical_density) ... ok
+test_written_input_hash (test_skills.FEMTests.test_written_input_hash) ... ok
+test_wrong_physical_boundary (test_skills.FEMTests.test_wrong_physical_boundary) ... ok
+test_wrong_units (test_skills.FEMTests.test_wrong_units) ... ok
+test_zero_energy_mask (test_skills.FEMTests.test_zero_energy_mask) ... ok
+test_bounded_fixture (test_skills.GapTests.test_bounded_fixture) ... ok
+test_doi_duplicate (test_skills.GapTests.test_doi_duplicate) ... ok
+test_future_search (test_skills.GapTests.test_future_search) ... ok
+test_missing_source_passage (test_skills.GapTests.test_missing_source_passage) ... ok
+test_universal_absence_rejected (test_skills.GapTests.test_universal_absence_rejected) ... ok
+test_unknown_citation (test_skills.GapTests.test_unknown_citation) ... ok
+test_unknown_not_absence (test_skills.GapTests.test_unknown_not_absence) ... ok
+test_duplicate_selection (test_skills.InstallationTests.test_duplicate_selection) ... ok
+test_install_and_no_overwrite (test_skills.InstallationTests.test_install_and_no_overwrite) ... ok
+test_no_partial_install_on_conflict (test_skills.InstallationTests.test_no_partial_install_on_conflict) ... ok
+test_calibration_holdout_leak (test_skills.SignificanceTests.test_calibration_holdout_leak) ... ok
+test_missing_decision (test_skills.SignificanceTests.test_missing_decision) ... ok
+test_no_rival_test (test_skills.SignificanceTests.test_no_rival_test) ... ok
+test_nonfinite_falsifier (test_skills.SignificanceTests.test_nonfinite_falsifier) ... ok
+test_prospective_contract (test_skills.SignificanceTests.test_prospective_contract) ... ok
+test_unbacked_holdout (test_skills.SignificanceTests.test_unbacked_holdout) ... ok
+test_dropped_core_figure (test_skills.WritingTests.test_dropped_core_figure) ... ok
+test_hash_tampering (test_skills.WritingTests.test_hash_tampering) ... ok
+test_missing_file (test_skills.WritingTests.test_missing_file) ... ok
+test_path_escape (test_skills.WritingTests.test_path_escape) ... ok
+test_proposal_cannot_support_claim (test_skills.WritingTests.test_proposal_cannot_support_claim) ... ok
+test_traceable_draft (test_skills.WritingTests.test_traceable_draft) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 0.175s
+
+OK

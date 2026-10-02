@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Significance"
+  short_description: "Connect research importance to evidence and decisive tests"
+  default_prompt: "Use $research-significance to work on the supplied research materials and produce an evidence-linked result."

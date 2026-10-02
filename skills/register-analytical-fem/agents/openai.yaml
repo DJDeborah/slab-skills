@@ -1,0 +1,4 @@
+interface:
+  display_name: "解析与 FEM 输入注册"
+  short_description: "Compare reference geometry, units, and supports"
+  default_prompt: "Use $register-analytical-fem to complete this research task with explicit evidence and verification limits."

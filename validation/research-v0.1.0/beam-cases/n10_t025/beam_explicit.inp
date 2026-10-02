@@ -1,0 +1,57 @@
+*Heading
+Generated small-deformation cantilever smoke benchmark
+*Node
+1, 0, 0
+2, 10, 0
+3, 20, 0
+4, 30, 0
+5, 40, 0
+6, 50, 0
+7, 60, 0
+8, 70, 0
+9, 80, 0
+10, 90, 0
+11, 100, 0
+*Element, type=B21, elset=BEAM
+1, 1, 2
+2, 2, 3
+3, 3, 4
+4, 4, 5
+5, 5, 6
+6, 6, 7
+7, 7, 8
+8, 8, 9
+9, 9, 10
+10, 10, 11
+*Nset, nset=ROOT
+1
+*Nset, nset=TIP
+11
+*Material, name=ELASTIC
+*Elastic
+210000, 0.3
+*Density
+7.85e-09
+*Beam Section, elset=BEAM, material=ELASTIC, section=RECT
+10, 1
+0., 0., -1.
+*Boundary
+ROOT, 1, 1, 0
+ROOT, 2, 2, 0
+ROOT, 6, 6, 0
+*Amplitude, name=RAMP, definition=SMOOTH STEP
+0., 0., 0.25, 1.
+*Step, name=LOAD, nlgeom=YES
+*Dynamic, Explicit
+, 0.25
+*Boundary, amplitude=RAMP
+TIP, 2, 2, -0.1
+*Output, field, number interval=20
+*Node Output
+U, RF
+*Output, history, time interval=0.0005
+*Energy Output
+ALLIE, ALLKE, ALLAE, ALLVD, ALLWK, ETOTAL
+*Node Output, nset=TIP
+U2, RF2
+*End Step

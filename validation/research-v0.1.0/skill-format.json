@@ -1,0 +1,26 @@
+[
+  {
+    "skill": "fem-explicit-bifurcation",
+    "pass": true,
+    "message": "Skill is valid!",
+    "ui_and_local_links": "passed"
+  },
+  {
+    "skill": "research-gap",
+    "pass": true,
+    "message": "Skill is valid!",
+    "ui_and_local_links": "passed"
+  },
+  {
+    "skill": "research-significance",
+    "pass": true,
+    "message": "Skill is valid!",
+    "ui_and_local_links": "passed"
+  },
+  {
+    "skill": "research-writing",
+    "pass": true,
+    "message": "Skill is valid!",
+    "ui_and_local_links": "passed"
+  }
+]

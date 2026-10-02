@@ -1,0 +1,33 @@
+{
+  "question": "Does changing an end constraint alter the accessible instability path?",
+  "decision": "Choose a boundary protocol that selects a target deformation sequence.",
+  "baseline": "Fixed geometry operated under one end constraint.",
+  "mechanism": "Constraints modify admissible modes and contact transitions.",
+  "observable": "First-event displacement, path identity and final configuration.",
+  "scope": "A proposed test on a synthetic beam family; no experimental finding.",
+  "claim": "The study may distinguish boundary-driven path selection from a rate artifact.",
+  "evidence_tier": "proposal",
+  "evidence": [
+    {
+      "id": "E1",
+      "role": "proposal",
+      "source": "Prospective test definition; not measured data."
+    }
+  ],
+  "rivals": [
+    {
+      "explanation": "The apparent path change is an inertial loading artifact.",
+      "discriminating_test": "Repeat at twice the loading duration with the same geometry and imperfection."
+    }
+  ],
+  "falsifier": {
+    "metric": "relative shift of first-event displacement under duration refinement",
+    "comparator": ">",
+    "threshold": 0.05
+  },
+  "controls": [
+    "Same geometry and material; registered DOFs; unchanged imperfection."
+  ],
+  "calibration_cases": [],
+  "holdout_cases": []
+}

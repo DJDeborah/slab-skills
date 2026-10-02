@@ -1,0 +1,32 @@
+[
+  {
+    "repo": "google-deepmind/mujoco",
+    "url": "https://github.com/google-deepmind/mujoco",
+    "commit": "56aeb7c4b9138861d47305f03195dfa6ef3067da",
+    "license": "Apache-2.0"
+  },
+  {
+    "repo": "K-Dense-AI/scientific-agent-skills",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "commit": "91497e335489dcb544ec8ddc8f6b7ce5fd6d1121",
+    "license": "MIT"
+  },
+  {
+    "repo": "UCL-ERL/skills",
+    "url": "https://github.com/UCL-ERL/skills",
+    "commit": "9d50603850b661a1da175ef3e330ba0b52e3efe9",
+    "license": "MIT"
+  },
+  {
+    "repo": "test1card/femis-skill",
+    "url": "https://github.com/test1card/femis-skill",
+    "commit": "ceff46782f8379425162f7de42a46312f07704a5",
+    "license": "Apache-2.0"
+  },
+  {
+    "repo": "Cai-aa/CAE-Agent-Hub",
+    "url": "https://github.com/Cai-aa/CAE-Agent-Hub",
+    "commit": "194ef498e6efb1984cd65325e21e71087588a581",
+    "license": "MIT"
+  }
+]

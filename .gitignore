@@ -1,0 +1,12 @@
+local-runs/
+__pycache__/
+*.pyc
+.venv/
+.agents/
+*.odb
+*.cae
+*.lck
+*.abq
+*.mdl
+*.stt
+*.sim

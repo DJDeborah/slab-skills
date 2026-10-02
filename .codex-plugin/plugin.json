@@ -1,0 +1,9 @@
+{
+  "name": "slab-skills",
+  "version": "0.1.0",
+  "description": "Research and mechanics skills with executable parameter workflows.",
+  "author": {
+    "name": "DJDeborah"
+  },
+  "skills": "./skills/"
+}

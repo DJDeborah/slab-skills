@@ -1,0 +1,123 @@
+{
+  "schema": "slab-catalog/1",
+  "version": "0.1.0",
+  "skills": [
+    {
+      "name": "research-significance",
+      "category": "research",
+      "summary_zh": "研究意义：把贡献连接到科学或设计决策",
+      "license": "MIT",
+      "runtime": "Python 标准库",
+      "verification": "合成证据演示与自动检查；真实课题需人工审阅",
+      "source": "research-mechanics-skills"
+    },
+    {
+      "name": "research-gap",
+      "category": "research",
+      "summary_zh": "研究空白：检索台账、能力矩阵与反例挑战",
+      "license": "MIT",
+      "runtime": "Python 标准库；联网检索由 Codex 执行",
+      "verification": "合成检索案例与自动检查；不证明任何真实首次性",
+      "source": "research-mechanics-skills"
+    },
+    {
+      "name": "research-writing",
+      "category": "writing",
+      "summary_zh": "论文写作：主张、证据、物理定义与 Main/SI 注册",
+      "license": "MIT",
+      "runtime": "Python 标准库",
+      "verification": "合成写作注册检查；未开展盲评",
+      "source": "research-mechanics-skills"
+    },
+    {
+      "name": "rapid-mechanics-hypothesis",
+      "category": "research",
+      "summary_zh": "快速假设验证：最小判别实验与停止规则",
+      "license": "MIT",
+      "runtime": "Codex；按课题选择数值工具",
+      "verification": "结构检查；工作流指导，未开展独立任务盲评",
+      "source": "research-workflow-pack"
+    },
+    {
+      "name": "fem-explicit-bifurcation",
+      "category": "simulation",
+      "summary_zh": "Explicit 验证、边界注册与分岔基准",
+      "license": "MIT",
+      "runtime": "Python 标准库；实际求解需 Abaqus",
+      "verification": "实测 B21 梁与解析分支基准；非通用分岔求解器",
+      "source": "research-mechanics-skills"
+    },
+    {
+      "name": "abaqus-parametric-workflow",
+      "category": "simulation",
+      "summary_zh": "冻结参数扫描、串行求解、结果审计与恢复",
+      "license": "MIT",
+      "runtime": "Python 3.10+；实际求解需 Abaqus",
+      "verification": "新增 15 项自动测试；2 个真实 Explicit 作业和恢复运行通过",
+      "source": "new-generalized-example"
+    },
+    {
+      "name": "beam-parameter-interface",
+      "category": "interface",
+      "summary_zh": "浏览器梁参数交互、解析预览与 JSON 导出",
+      "license": "MIT",
+      "runtime": "现代浏览器；生成 FEM 输入需 Python",
+      "verification": "真实浏览器参数变化、复制 JSON 与生成输入通过；下载文件捕获未验证",
+      "source": "new-generalized-example"
+    },
+    {
+      "name": "helix-rod-design",
+      "category": "mechanics",
+      "summary_zh": "螺旋杆几何、参数扫描与可制造性检查",
+      "license": "MIT",
+      "runtime": "Python 标准库",
+      "verification": "可安装结构检查；几何辅助脚本提供示例，未验证 FEM 杆模型",
+      "source": "mechanics-skills-lab"
+    },
+    {
+      "name": "cauchy-micropolar-modeling",
+      "category": "mechanics",
+      "summary_zh": "Cauchy/Micropolar 物理量、尺度与参考解",
+      "license": "MIT",
+      "runtime": "Python 标准库",
+      "verification": "可安装结构检查；参考层模型，未验证通用微极材料辨识",
+      "source": "mechanics-skills-lab"
+    },
+    {
+      "name": "fem-cae-verification",
+      "category": "simulation",
+      "summary_zh": "有限元网格、能量、收敛与证据检查",
+      "license": "MIT",
+      "runtime": "Python 标准库；求解器按项目配置",
+      "verification": "可安装结构检查；现成数值检查器，阈值需按模型注册",
+      "source": "mechanics-skills-lab"
+    },
+    {
+      "name": "register-analytical-fem",
+      "category": "mechanics",
+      "summary_zh": "解析与 FEM 的几何、单位、载荷和支撑注册",
+      "license": "MIT",
+      "runtime": "Python 标准库",
+      "verification": "可安装结构检查；注册比对示例，不自动证明模型等价",
+      "source": "research-workflow-pack"
+    },
+    {
+      "name": "mechanics-research-handoff",
+      "category": "handoff",
+      "summary_zh": "力学课题阶段交接、证据分级与下一步决策",
+      "license": "MIT",
+      "runtime": "Codex",
+      "verification": "结构检查；指令型 skill，尚无独立任务效果评测",
+      "source": "mechanics-skills-lab"
+    },
+    {
+      "name": "research-evidence-handoff",
+      "category": "handoff",
+      "summary_zh": "主张到证据文件的可追踪交付",
+      "license": "MIT",
+      "runtime": "Python 标准库",
+      "verification": "结构检查；证据索引辅助脚本，仍需检查科学解释",
+      "source": "research-workflow-pack"
+    }
+  ]
+}

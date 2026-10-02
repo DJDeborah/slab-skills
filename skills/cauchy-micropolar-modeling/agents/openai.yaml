@@ -1,0 +1,4 @@
+interface:
+  display_name: "cauchy-micropolar-modeling"
+  short_description: "Reproducible mechanics modeling and evidence workflow"
+  default_prompt: "Use $cauchy-micropolar-modeling to complete the mechanics task with explicit inputs and verification evidence."

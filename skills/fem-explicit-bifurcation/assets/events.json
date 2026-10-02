@@ -1,0 +1,8 @@
+{
+  "force_field": "RF2",
+  "force_sign": -1,
+  "force_drop_fraction": 0.15,
+  "force_floor": 0.00001,
+  "window_samples": 3,
+  "persistence_samples": 3
+}

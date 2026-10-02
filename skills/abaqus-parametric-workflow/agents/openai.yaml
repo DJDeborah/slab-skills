@@ -1,0 +1,4 @@
+interface:
+  display_name: "Abaqus Parametric Workflow"
+  short_description: "Freeze, run and resume reproducible Abaqus parameter sweeps"
+  default_prompt: "Use $abaqus-parametric-workflow to prepare and verify the supplied mechanics workflow."

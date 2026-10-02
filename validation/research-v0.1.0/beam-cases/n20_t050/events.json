@@ -1,0 +1,12 @@
+{
+  "events": [],
+  "configuration": {
+    "force_field": "RF2",
+    "force_sign": -1,
+    "force_drop_fraction": 0.15,
+    "force_floor": 1e-05,
+    "window_samples": 3,
+    "persistence_samples": 3
+  },
+  "scope": "Threshold-defined observable candidates only; no equilibrium bifurcation or physical landing claim."
+}

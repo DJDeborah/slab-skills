@@ -1,0 +1,4 @@
+interface:
+  display_name: "研究证据交付"
+  short_description: "Trace research claims to exact source artifacts"
+  default_prompt: "Use $research-evidence-handoff to complete this research task with explicit evidence and verification limits."

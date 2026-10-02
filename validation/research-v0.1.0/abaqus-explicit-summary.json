@@ -1,0 +1,107 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "case": "n10_t025",
+      "elements": 10,
+      "duration": 0.25,
+      "double_precision": true,
+      "quality": {
+        "pass": true,
+        "errors": [],
+        "window_fraction": [
+          0.5,
+          1.0
+        ],
+        "window_samples": 251,
+        "meaningful_samples": 251,
+        "masked_samples": 0,
+        "max_ke_ie": 0.0008011447812059694,
+        "max_ae_ie": 0.0,
+        "full_history_max_ke_ie": 0.006029787389956764,
+        "tip_reaction_N": -0.05252707004547119,
+        "expected_tip_reaction_N": -0.0525,
+        "reaction_relative_error": 0.0005156199137370162,
+        "scope": "Elastic numerical smoke only; event, mesh/rate convergence and FE bifurcation unverified."
+      },
+      "event_candidates": 0,
+      "final_U2": -0.10000000149011612,
+      "history_samples": 501,
+      "source_hashes": {
+        "beam_explicit.inp": "5830252df7f3719c8a7450e250ee40c8e5d99de8d7915b20d39211770086a118",
+        "beam_explicit.sta": "41f26f50c54df72187194ccb724d44ebe51f4c365144b0225a7b354f06dcd245",
+        "beam_explicit.odb": "5c5bf2598f4c7a8e56ed4f7b7333c0960c26c8d2b253a5f046d5a8049d55bd27"
+      }
+    },
+    {
+      "case": "n20_t025",
+      "elements": 20,
+      "duration": 0.25,
+      "double_precision": true,
+      "quality": {
+        "pass": true,
+        "errors": [],
+        "window_fraction": [
+          0.5,
+          1.0
+        ],
+        "window_samples": 251,
+        "meaningful_samples": 251,
+        "masked_samples": 0,
+        "max_ke_ie": 0.0007952793107002372,
+        "max_ae_ie": 0.0,
+        "full_history_max_ke_ie": 0.005985599901378877,
+        "tip_reaction_N": -0.052503861486911774,
+        "expected_tip_reaction_N": -0.0525,
+        "reaction_relative_error": 7.355213165286904e-05,
+        "scope": "Elastic numerical smoke only; event, mesh/rate convergence and FE bifurcation unverified."
+      },
+      "event_candidates": 0,
+      "final_U2": -0.10000000149011612,
+      "history_samples": 501,
+      "source_hashes": {
+        "beam_explicit.inp": "890eee9aacedd47b7f78dce8ac406cf4983b2ba3d53b9490f561c606f7bf8345",
+        "beam_explicit.sta": "9061e6efd272896473db3ee83db97c21ca1d64cddf405f32c68312a854b34eed",
+        "beam_explicit.odb": "02cc055158f7345e845e2e2d033ea5e08f0bd5c61efe19140a79f38b6bc49f48"
+      }
+    },
+    {
+      "case": "n20_t050",
+      "elements": 20,
+      "duration": 0.5,
+      "double_precision": true,
+      "quality": {
+        "pass": true,
+        "errors": [],
+        "window_fraction": [
+          0.5,
+          1.0
+        ],
+        "window_samples": 251,
+        "meaningful_samples": 251,
+        "masked_samples": 0,
+        "max_ke_ie": 0.000198802505421228,
+        "max_ae_ie": 0.0,
+        "full_history_max_ke_ie": 0.0014963739020902094,
+        "tip_reaction_N": -0.05250374227762222,
+        "expected_tip_reaction_N": -0.0525,
+        "reaction_relative_error": 7.128147851856845e-05,
+        "scope": "Elastic numerical smoke only; event, mesh/rate convergence and FE bifurcation unverified."
+      },
+      "event_candidates": 0,
+      "final_U2": -0.10000000149011612,
+      "history_samples": 501,
+      "source_hashes": {
+        "beam_explicit.inp": "2d4d12076dc9761170bc833cb84243b6193247b87b53c01c1f7e085c1a5de1ff",
+        "beam_explicit.sta": "996a49ee3b8dd9c908e4f040cc3942d08d7763bcc200c758103f73740f2a290c",
+        "beam_explicit.odb": "358925c81aa1f9671cb10049a6940b772d626b4dcc42407a6a5ebc1ccb1d6eb0"
+      }
+    }
+  ],
+  "scope": "Elastic straight beam numerical checks only; no contact or FE bifurcation validation.",
+  "reaction_sensitivity": {
+    "mesh10_to20_relative": 0.0004420352694478135,
+    "duration025_to050_relative": 2.2704912903244573e-06,
+    "scope": "Sensitivity of final elastic reaction only; no universal convergence order."
+  }
+}

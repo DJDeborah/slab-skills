@@ -1,0 +1,2 @@
+study_id,query,engine,searched_on,title,url,doi,decision,passage,capability_note
+DEMO1,synthetic adversarial query,DEMO-only,2026-10-02,Synthetic fixture not a paper,https://example.org/demo,,include,Fixture section 1,Fixture only; replace before literature use

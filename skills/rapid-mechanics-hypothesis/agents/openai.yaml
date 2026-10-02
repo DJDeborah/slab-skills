@@ -1,0 +1,4 @@
+interface:
+  display_name: "快速力学假设验证"
+  short_description: "Run a small falsifiable mechanics benchmark"
+  default_prompt: "Use $rapid-mechanics-hypothesis to complete this research task with explicit evidence and verification limits."
